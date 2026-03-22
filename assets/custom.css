@@ -591,6 +591,35 @@ order:5;
     font-size: 11px !important;
     padding: 6px 8px !important;
   }
+
+  .navigation-header__menu {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .navigation-header__menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navigation-header__menu .list-menu--inline {
+    flex-wrap: nowrap !important;
+    min-width: max-content;
+    padding-bottom: 4px;
+  }
+
+  .navigation-header__menu .header__menu-root {
+    margin-left: 14px !important;
+  }
+
+  .navigation-header__menu .header__menu-root:first-child {
+    margin-left: 8px !important;
+  }
+
+  .header__menu-item {
+    font-size: 12px !important;
+    padding: 8px 0 !important;
+  }
 }
 /* Banner grid ana yapı */
 .banner-grid__container.row {
@@ -949,6 +978,11 @@ order:5;
     min-width: 0 !important;
     height: auto !important;
     margin-top: 0 !important;
+  }
+
+  .index-slideshow-categories .slideshow__categories-content .header__vertical-item {
+    min-height: 34px;
+    font-size: 13px !important;
   }
 }
 /* Haftanın teklifi kartı */
