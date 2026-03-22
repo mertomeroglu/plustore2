@@ -373,6 +373,9 @@ color:#fff !important;
 }
 .top-header__menu-content{
 display:flex;
+align-items:center;
+justify-content:flex-end;
+gap:0;
 }
 
 /* Giriş Yap / Üye Ol */
@@ -412,14 +415,104 @@ order:5;
 .main-header__right {
   display: flex !important;
   align-items: center !important;
+  gap: 20px !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
 }
 
 .main-header__search {
   order: 1 !important;
+  flex: 1 1 auto !important;
+  max-width: none !important;
 }
 
 .main-header__cart {
   order: 3 !important;
+  padding-left: 0 !important;
+  gap: 12px !important;
+  white-space: nowrap;
+}
+
+.top-header__menu-content li > a,
+.top-header__menu-content .top-header__menu-item {
+  font-size: 12px !important;
+  letter-spacing: 0.02em;
+  color: #5f6878 !important;
+  padding: 8px 12px !important;
+}
+
+.top-header__menu-content li > a:hover,
+.top-header__menu-content .top-header__menu-item:hover {
+  color: #111827 !important;
+}
+
+.main-header__search .search__form {
+  border: 1px solid rgba(17, 24, 39, 0.12) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
+}
+
+.main-header__search .search_box,
+.main-header__search .search__form-collections select {
+  border: 0 !important;
+  background: transparent !important;
+  color: #111827 !important;
+  font-size: 14px !important;
+}
+
+.main-header__search .search_box::placeholder {
+  color: #9aa3b2 !important;
+}
+
+.main-header__search .search__form-collections {
+  border-left: 1px solid rgba(17, 24, 39, 0.08) !important;
+}
+
+.main-header__search .search_submit {
+  width: 48px !important;
+  border: 0 !important;
+  background: #111827 !important;
+}
+
+.main-header__cart .header__cart-icon {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-radius: 12px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.main-header__cart .header__cart-icon:hover {
+  border-color: rgba(17, 24, 39, 0.3);
+  background: #f8fafc;
+}
+
+.main-header__cart .icon-cs-cart:before {
+  font-size: 26px !important;
+}
+
+@media (max-width: 991px) {
+  .main-header__right {
+    gap: 10px !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  .main-header__cart .header__cart-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .top-header__menu-content li > a,
+  .top-header__menu-content .top-header__menu-item {
+    font-size: 11px !important;
+    padding: 6px 8px !important;
+  }
 }
 /* Banner grid ana yapı */
 .banner-grid__container.row {
