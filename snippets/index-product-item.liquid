@@ -8,7 +8,7 @@
     assign sold_out = false
   endif
 -%}
-<div class="product-item__grid {% if sold_out %}product-item__sold-out{% endif %}">
+<div class="product-item__grid product-item__grid--premium {% if sold_out %}product-item__sold-out{% endif %}">
   {%- if settings.product_title == 'top' -%}
     <a class="product-item__title h5" href="{{ product.url | within: collection }}">{{ product.title }}</a>
   {%- endif -%}
@@ -96,6 +96,24 @@
       <a class="product-item__title h5" href="{{ product.url | within: collection }}">{{ product.title }}</a>
     {%- endif -%}
     {% render 'price', product: product , price_class: 'product-item__price' %}
+    <div class="product-item__meta">
+      <span class="product-item__meta-chip">Hizli Kargo</span>
+      {%- if sold_out -%}
+        <span class="product-item__meta-chip product-item__meta-chip--muted">Stokta Yok</span>
+      {%- else -%}
+        <span class="product-item__meta-chip">Stokta</span>
+      {%- endif -%}
+    </div>
+    <div class="product-item__cta-row">
+      <a class="product-item__cta product-item__cta--ghost" href="{{ product.url | within: collection }}">Urunu Incele</a>
+      {%- if product.available and product.variants.size == 1 -%}
+        <product-cart>
+          <a href="{{ product.url | within: collection }}" class="product-item__cta product-item__cta--solid" data-add-cart="{{ product.variants[0].id }}">Sepete Ekle</a>
+        </product-cart>
+      {%- else -%}
+        <a class="product-item__cta product-item__cta--solid" href="{{ product.url | within: collection }}">Secenekler</a>
+      {%- endif -%}
+    </div>
     {%- if settings.product_rating -%}
       <div class="product-item__rating">
         <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
